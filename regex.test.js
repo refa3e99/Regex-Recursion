@@ -47,27 +47,36 @@ required extention are jpg, jpeg and png.
 function imagesSearcher(text){
     let arr = [];
     // Add your logic.
-    let img1 = /(\w{1,}\.jpg)/g;
-    let img2 = /(\w{1,}\.png)/g;
+    let img1 = /(\w{1,}\.png)/g;
+    let img2 = /(\w{1,}\.jpg)/g;
     let img3 = /(\w{1,}\.jpeg)/g;
 
     let result1 = text.match(img1);
     let result2 = text.match(img2);
     let result3 = text.match(img3);
 
-    result1.forEach(element => {
+    if(result1 != null){
+        result1.forEach(element => {
         arr.push(element);
     });
+    }
 
-    result2.forEach(element => {
+    if(result2 != null){
+        result2.forEach(element => {
         arr.push(element);
     });
+    }
 
-    result3.forEach(element => {
+    if(result3 != null){
+        result3.forEach(element => {
         arr.push(element);
     });
+    }
+
+    
 
     return arr ;
+
 }
 
 
